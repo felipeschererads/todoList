@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TO DO List Client</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <style>
+        .done {
+            pointer-events: none
+        }
+
+        .container-list .alert-info {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header">
+                <h1>To Do List</h1>
+            </div>
+
+            <div class="well well-sm">
+                <form class="js-form-cad">
+                    <div class="form-group">
+                        <input type="text" required class="form-control js-input-task">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>
+            </div>
+
+            <ul class="js-container-list container-list"></ul>
+
+        </div>
+    </div>
+</div>
+
+<script id="tpl-task" type="text/template">
+    <li class="alert {{class}}">
+        <span class="js-update-btn {{classTitle}}">{{title}}</span>
+        <button type="button" class="close js-delete-btn">
+            <span>&times;</span>
+        </button>
+    </li>
+</script>
+
+<body>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/TodoList/TodoListModel.js"></script>
+    <script src="js/TodoList/TodoListView.js"></script>
+    <script src="js/TodoList/TodoListController.js"></script>
+</body>
+
+</html>
